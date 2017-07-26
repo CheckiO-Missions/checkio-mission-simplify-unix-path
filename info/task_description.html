@@ -1,0 +1,29 @@
+<p>
+    Simplify a give path
+</p>
+
+<p>
+    <strong>Input: </strong> String. Unix path.
+</p>
+
+<p>
+    <strong>Output: </strong> String. Unix path.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Example:</strong>
+    </p>
+<pre class="brush: python">{% if interpreter.slug == "js-node" %}
+sumTwo(2, 3) == 5
+sumTwo(5, 7) == 12
+{% else %}
+simplify_path('/a/') == '/a'
+simplify_path('/a/b') == '/a/b'
+simplify_path('/a//b/c') == '/a/b/c'
+simplify_path('/a/b/./ci') == '/a/b/ci'
+simplify_path('/a/b/../c') == '/a/c'
+{% endif %}</pre>
+</div>

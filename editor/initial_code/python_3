@@ -1,0 +1,17 @@
+def simplify_path(path):
+    """
+        simplifying a given path
+    """
+    # your code here
+    return path
+
+if __name__ == '__main__':
+    #These "asserts" using only for self-checking and not necessary for auto-testing
+    assert simplify_path('/a/') == '/a', "/a/"
+    assert simplify_path('/a/b') == '/a/b', "/a/b"
+    assert simplify_path('/a//b/c') == '/a/b/c', "/a//b/c"
+    assert simplify_path('/a/b/./ci') == '/a/b/ci', "/a/b/./ci"
+    assert simplify_path('/a/b/../c') == '/a/c', "/a/b/../c"
+    assert simplify_path('/a/b//') == '/a/b', "/a/b//"
+    assert simplify_path('a/../b/c') == 'b/c', "a/../b/c"
+    print('Simply enough! Let\'s check it now!!')
