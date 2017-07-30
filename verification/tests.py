@@ -31,6 +31,24 @@ TESTS = {
         },{
             "input": "a/../b/c",
             "answer": "b/c"
+        },{
+            "input": "vi/..",
+            "answer": "."
+        },{
+            "input": "./.",
+            "answer": "."
+        },{
+            "input": "/for/../..",
+            "answer": "/"
+        },{
+            "input": "/for/../../no/..",
+            "answer": "/"
+        },{
+            "input": "for/../..",
+            "answer": ".."
+        },{
+            "input": "../foo",
+            "answer": "../foo"
         }
         
     ],
@@ -56,6 +74,27 @@ TESTS = {
         },{
             "input": "/",
             "answer": "/"
+        },{
+            "input": ".././..",
+            "answer": "../.."
+        },{
+            "input": "../foo/../foo",
+            "answer": "../foo"
+        },{
+            "input": "/../foo/../foo",
+            "answer": "/foo"
+        },{
+            "input": "////",
+            "answer": "/"
+        },{
+            "input": "//foo//goo",
+            "answer": "/foo/goo"
+        },{
+            "input": "foo/./.",
+            "answer": "foo"
+        },{
+            "input": "/.../....",
+            "answer": "/.../...."
         }
     ]
 }

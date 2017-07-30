@@ -1,5 +1,9 @@
 <p>
-    Simplify a give path
+    You can think about it as simplifying of first argument of "cd" command (a standart bash command). Simplifying means making shorter.
+</p>
+
+<p>
+	For instance if I do <code>cd a/../b</code> it works the same as <code>cd b</code>. Which means "b" is simplifying of "a/../b". It is much easier to explain everything using examples.
 </p>
 
 <p>
@@ -17,13 +21,50 @@
         <strong>Example:</strong>
     </p>
 <pre class="brush: python">{% if interpreter.slug == "js-node" %}
-sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+// last slash is not important
+simplifyPath('/a/') == '/a'
+
+// double slash can be united in one
+simplifyPath('/a//b/c') == '/a/b/c'
+
+// double dot - go to previous folder
+simplifyPath('dir/fol/../no') == 'dir/no'
+simplifyPath('dir/fol/../../no') == 'no'
+
+// one dot means current dir
+simplifyPath('/a/b/./ci') == '/a/b/ci'
+simplifyPath('vi/..') == '.'
+simplifyPath('./.') == '.'
+
+// you can't go deeper than root folder
+simplifyPath('/for/../..') == '/'
+simplifyPath('/for/../../no/..') == '/'
+
+// not all double-dots can be simplyfied in related path
+simplifyPath('for/../..') == '..'
+simplifyPath('../foo') == '../foo'
 {% else %}
+# last slash is not important
 simplify_path('/a/') == '/a'
-simplify_path('/a/b') == '/a/b'
+
+# double slash can be united in one
 simplify_path('/a//b/c') == '/a/b/c'
+
+# double dot - go to previous folder
+simplify_path('dir/fol/../no') == 'dir/no'
+simplify_path('dir/fol/../../no') == 'no'
+
+# one dot means current dir
 simplify_path('/a/b/./ci') == '/a/b/ci'
-simplify_path('/a/b/../c') == '/a/c'
+simplify_path('vi/..') == '.'
+simplify_path('./.') == '.'
+
+# you can't go deeper than root folder
+simplify_path('/for/../..') == '/'
+simplify_path('/for/../../no/..') == '/'
+
+# not all double-dots can be simplyfied in related path
+simplify_path('for/../..') == '..'
+simplify_path('../foo') == '../foo'
 {% endif %}</pre>
 </div>
