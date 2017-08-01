@@ -75,6 +75,9 @@ TESTS = {
             "input": "/",
             "answer": "/"
         },{
+            "input": "./",
+            "answer": "."
+        },{
             "input": ".././..",
             "answer": "../.."
         },{
