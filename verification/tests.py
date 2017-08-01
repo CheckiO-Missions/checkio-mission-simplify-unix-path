@@ -84,6 +84,9 @@ TESTS = {
             "input": "/../foo/../foo",
             "answer": "/foo"
         },{
+            "input": "for/../../..",
+            "answer": "../.."
+        },{
             "input": "///",
             "answer": "/"
         },{
