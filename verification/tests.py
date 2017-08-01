@@ -87,8 +87,17 @@ TESTS = {
             "input": "/../foo/../foo",
             "answer": "/foo"
         },{
+            "input": "///",
+            "answer": "/"
+        },{
+            "input": "///d",
+            "answer": "/d"
+        },{
             "input": "////",
             "answer": "/"
+        },{
+            "input": "////d",
+            "answer": "/d"
         },{
             "input": "//foo//goo",
             "answer": "/foo/goo"
