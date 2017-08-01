@@ -113,6 +113,12 @@ TESTS = {
         },{
             "input": "//c/",
             "answer": "/c"
+        },{
+            "input": "./..",
+            "answer": ".."
+        },{
+            "input": "./b",
+            "answer": "b"
         }
     ]
 }
