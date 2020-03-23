@@ -1,0 +1,53 @@
+<p>
+    Ви можете подумати про це як спрощення першого аргументу команди "cd" (стандартна команда bash). Спростити означає скоротити
+</p>
+
+<p>
+	For instance if I do <code>cd a/../b</code> it works the same as <code>cd b</code>. Which means "b" is simplifying of "a/../b". 
+  It is much easier to explain everything using examples.
+  Наприклад, якщо я виконую <code>cd a/../b</code>, вона працює так само, як <code>cd b</code>. 
+  Що означає "b" - спрощення "a /../ b". Набагато простіше пояснити все, використовуючи приклади.
+</p>
+
+<p>
+    <strong>Вхідні дані: </strong> Стрічка. Не пустий, валідний, unix шлях.
+</p>
+
+<p>
+    <strong>Вихідні дані: </strong> Стрічка. Unix шлях.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Приклад:</strong>
+    </p>
+<pre class="brush: python">{% if interpreter.slug == "js-node" %}
+// Останній слеш не важлива(слеш - коса риска)
+simplifyPath('/a/') == '/a'
+
+// Подвійний слеш може бути об'єднаиний в один
+simplifyPath('/a//b/c') == '/a/b/c'
+
+// Подвійна крапка - перейти до попередньої папки
+simplifyPath('dir/fol/../no') == 'dir/no'
+simplifyPath('dir/fol/../../no') == 'no'
+
+// одна крапка означає почочну дерикторію
+simplifyPath('/a/b/./ci') == '/a/b/ci'
+simplifyPath('vi/..') == '.'
+simplifyPath('./.') == '.'
+
+// ви не можете перейти вище коренева папка
+simplifyPath('/for/../..') == '/'
+simplifyPath('/for/../../no/..') == '/'
+
+// не всі подвійні крапки можуть бути спрощенні в відносному шляху
+simplifyPath('for/../..') == '..'
+simplifyPath('../foo') == '../foo'
+{% else %}
+# останій слеш не важливий
+simplify_path('/a/') == '/a'
+{% endif %}</pre>
+</div>
